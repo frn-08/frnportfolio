@@ -64,7 +64,7 @@ html, body {
     /* BACKGROUND ROUTING ENG: 
        "../" jumps out of the css/ folder, then searches images/ for your target file.
     */
-    background-image: url('images/dark-brown-with-gold-lines.jpg');
+    background-image: url('../images/dark-brown-with-gold-lines.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
