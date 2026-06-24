@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Faran</title>
+    
+    <!-- 
+      PATH ROUTING RULE: 
+      "../" steps backward out of the "html" folder so the browser 
+      can enter the "css" folder and read your updated "contact.css" stylesheet. 
+    -->
+    <link rel="stylesheet" href="css/contact.css">
+    
+    <!-- FONTS: Imports your clean, monospace developer font style directly from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- THE SITE WRAPPER: Directs the flexbox flow across the full browser window height -->
+    <div class="page-container">
+        
+        <!-- SITE HEADER: Full-width top branding banner layout -->
+        <header class="site-header">
+            <h1 class="logo">faran</h1>
+        </header>
+
+        <!-- 
+          CONTACT MAIN CANVAS: 
+          This central panel handles rendering your "lighter-brown-waves.jpg" 
+          background image beautifully across the screen space.
+        -->
+        <main class="contact-hero">
+            
+            <!-- CENTRAL WORKSPACE: Restricts the layout width so columns stay neatly proportioned -->
+            <div class="contact-content-wrapper">
+                
+                <!-- HOLLOW TITLE BANNER: Recreates your elegant framed "contact" heading layout -->
+                <div class="page-title-banner">
+                    <h2 class="main-title">contact</h2>
+                </div>
+
+                <!-- 
+                  THREE-COLUMN GRID SYSTEM: 
+                  Lays out your three social platform blocks side-by-side across desktop monitors.
+                -->
+                <div class="social-grid">
+
+                    <!-- COLUMN 1: Instagram -->
+                    <div class="grid-column">
+                        <div class="column-pill-header">
+                            <a href="https://www.instagram.com/frn.008/" target="_blank" >instagram</a>
+                        </div>
+                        <!-- Anchor tag wraps the image to make the icon a clickable link -->
+                        <a href="https://www.instagram.com/frn.008/" target="_blank" class="icon-link">
+                            <img src="../images/instagram.png" alt="Instagram" class="social-icon">
+                        </a>
+                    </div>
+
+                    <!-- COLUMN 2: Gmail -->
+                    <div class="grid-column">
+                        <div class="column-pill-header">
+                            <a href="mailto:faranahmadbutt@gmail.com" target="_blank" >gmail</a>
+                        </div>
+                        <!-- Email mailto link wrapping your updated image filename -->
+                        <a href="mailto:faranahmadbutt@gmail.com" class="icon-link">
+                            <img src="../images/gmail.png" alt="Gmail" class="social-icon">
+                        </a>
+                    </div>
+
+                    <!-- COLUMN 3: Facebook -->
+                    <div class="grid-column">
+                        <div class="column-pill-header">
+                            <a href="https://www.facebook.com/profile.php?id=61590536835637" target="_blank" >facebook</a>
+                        </div>
+                        <!-- Clickable link wrapping your updated image filename -->
+                        <a href="https://www.facebook.com/profile.php?id=61590536835637" target="_blank" class="icon-link">
+                            <img src="../images/facebook.png" alt="Facebook" class="social-icon">
+                        </a>
+                    </div>
+
+                </div> <!-- End of social-grid -->
+
+            </div> <!-- End of contact-content-wrapper -->
+        </main>
+
+        <!-- SITE FOOTER NAVIGATION: Swaps active states so "contact" is highlighted -->
+        <footer class="site-footer">
+            <nav class="nav-links">
+                <!-- Relative pathways linking your portfolio network together seamlessly -->
+                <a href="index.html" class="nav-item">home</a>
+                <a href="aboutme.html" class="nav-item">about me</a>
+                <a href="contact.html" class="nav-item active">contact</a>
+            </nav>
+        </footer>
+
+    </div>
+
+</body>
+</html>

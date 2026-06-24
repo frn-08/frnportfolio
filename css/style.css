@@ -1,0 +1,154 @@
+/* =========================================
+  1. GLOBAL VARIABLES & PALETTE SETUP
+  =========================================
+*/
+:root {
+    --bg-dark: #0f0e0e;
+    --card-beige-light: #cbb49a;
+    --text-dark: #2a221b;
+    --text-box-bg: rgba(235, 222, 206, 0.88); /* Semi-transparent layout opacity */
+}
+
+/* THE GLOBAL RESET: Erases standard margins and pads layouts precisely */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+  2. SITE ENGINE FLEXBOX CONTAINER
+  =========================================
+*/
+html, body {
+    height: 100%; /* Forces browser to give layout tags access to full window height */
+    background-color: var(--card-beige-light); /* Sets page background to your core light beige theme */
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column; /* Organizes layout into header (top), hero (center), footer (bottom) */
+    height: 100vh;          /* Spans page structure to precisely equal viewport height */
+    width: 100%;
+}
+
+/* =========================================
+  3. FULL-WIDTH TOP HEADER BANNER
+  =========================================
+*/
+.site-header {
+    height: 90px; /* Tallened banner format to look proportioned on big viewports */
+    background-color: var(--card-beige-light);
+    display: flex;
+    align-items: center;
+    padding-left: 10%; /* Uses percentages to scale dynamically with monitor widths */
+}
+
+.logo {
+    font-size: 3.2rem; /* Scaled header print sizing upward for desktop layout readability */
+    color: var(--text-dark);
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+/* =========================================
+  4. FULL-WIDTH HERO SECTION (WAVE BACKGROUND)
+  =========================================
+*/
+.hero-section {
+    flex: 1; /* Automatically stretches height to fill all remaining screen vertical canvas */
+    width: 100%;
+    
+    /* BACKGROUND IMAGE: Navigates back out of css folder, into images folder */
+    background-image: url('images/brown-waves.png'), url('images/brown-waves.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center; /* Aligns content block horizontally on big screens */
+    align-items: center;     /* Centers text content block vertically over your waves backdrop */
+}
+
+/* =========================================
+  5. TEXT BOUNDARY MANAGEMENT WRAPPER
+  =========================================
+*/
+.content-wrapper {
+    width: 90%;
+    max-width: 1250px; /* Hard barrier preventing your lines of text from growing too wide */
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: var(--card-beige-light); /* Off-white text stands out vividly against your dark wave photo */
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.bio-box {
+    background-color: var(--text-box-bg);
+    padding: 45px; /* Enlarged spatial buffer box formatting */
+    border-radius: 10px;
+    color: var(--text-dark);
+    font-size: 1.5rem; /* Boosted base layout font proportions for comfortable desktop reading */
+    line-height: 1.7;   /* Controls lines spatial air gaps spacing rules */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+  6. INTERSECTING CAPSLOCKED CTA BUTTON
+  =========================================
+*/
+.cta-btn {
+    align-self: center; /* Centers button element independently inside its wrapper grid */
+    background-color: var(--text-box-bg);
+    color: var(--text-dark);
+    text-decoration: underline;
+    padding: 30px 50px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    
+    /* INTERSECTION EFFECT: Pulls pill up dynamically so it floats halfway out of the textbox */
+    margin-top: 40px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 75);
+    transition: transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px); /* Slight hover shift animation */
+}
+
+/* =========================================
+  7. FULL-WIDTH FOOTER NAVIGATION BAR
+  =========================================
+*/
+.site-footer {
+    height: 90px;
+    background-color: var(--card-beige-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    width: 100%;
+    max-width: 600px; /* Keeps menu choices cleanly grouped toward center screen grid areas */
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    color: var(--text-dark);
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+.nav-item.active {
+    text-decoration: none;
+    opacity: 0.5; /* Style modifier fades out home selection item text */
+}

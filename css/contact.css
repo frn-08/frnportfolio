@@ -1,0 +1,208 @@
+/* =========================================
+  1. GLOBAL VARIABLES & PALETTE SYSTEM
+  =========================================
+*/
+:root {
+    --bg-dark: #0f0e0e;
+    --card-beige-light: #cbb49a;
+    --text-dark: #2a221b;
+    --text-box-bg: rgba(235, 222, 206, 0.88); /* Semi-transparent layout opacity */
+    --border-outline: #5c4a3c; /* Outlined accent color for your title frame box */
+}
+
+/* THE GLOBAL RESET: Standardizes element box math dimensions across all browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+  2. BROWSER VIEWPORT FRAME ENGINE
+  =========================================
+*/
+html, body {
+    height: 100%;
+    background-color: var(--card-beige-light);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column; /* Vertically stacks header, main content canvas, and footer */
+    height: 100vh;          /* Spans page to precisely equal 100% of screen viewport height */
+    width: 100%;
+}
+
+/* =========================================
+  3. UNIVERSAL SITE NAVIGATION HEADER
+  =========================================
+*/
+.site-header {
+    height: 90px;
+    background-color: var(--card-beige-light);
+    display: flex;
+    align-items: center;
+    padding-left: 10%; /* Scales dynamically with monitor width choices */
+}
+
+.logo {
+    font-size: 3.2rem;
+    color: var(--text-dark);
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+/* =========================================
+  4. THE CONTACT HERO SECTION (LIGHTER BROWN WAVES)
+  =========================================
+*/
+.contact-hero {
+    flex: 1; /* Automatically stretches height to absorb all remaining vertical screen space */
+    width: 100%;
+    
+    /* BACKGROUND ARCHITECTURE: Moves up from css/, enters images/ for asset */
+    background-image: url('images/lighter-brown-waves.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center; /* Horizontally centers content elements on layout canvas */
+    align-items: center;     /* Vertically centers content elements on layout canvas */
+    padding: 40px 0;
+}
+
+/* =========================================
+  5. CONTACT CONTAINER LIMIT WRAPPER
+  =========================================
+*/
+.contact-content-wrapper {
+    width: 90%;
+    max-width: 1100px; /* Locks your layout grid within clean desktop limits */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* THE FRAMED MAIN TITLE: Hollow outline box styling */
+.page-title-banner {
+    border: 7px solid #c7a98d;
+    padding: 10px 80px;
+    margin-bottom: 180px; /* Deep spacing pushes columns downwards */
+    background-color: rgba(71, 43, 10, 0.5); /* Subtle dark beige overlay filter */
+}
+
+.main-title {
+    font-size: 3.8rem;
+    color: var(--card-beige-light);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+  6. THREE-COLUMN CONFIGURATION LOGIC
+  =========================================
+*/
+.social-grid {
+    display: flex;
+    flex-direction: row; /* Orders your columns horizontally across desktop monitors */
+    justify-content: space-around; /* Distributes horizontal space evenly between structures */
+    align-items: center;
+    width: 100%;
+    gap: 40px; /* Uniform grid gap separating columns */
+}
+
+.grid-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers elements directly down the center vertical line */
+}
+
+/* THE CAPSULE HEADER PILLS */
+.column-pill-header {
+    background-color: var(--text-box-bg);
+    padding: 15px 45px;
+    border-radius: 50px; /* Rounds caps completely into elegant capsules */
+    margin-bottom: 40px; /* Gap separating capsule base from image links below */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Restored to clean 25% alpha opacity shadow */
+    text-decoration: underline; /* Retains stylized text underline detail from mockup design */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Timing engine handling lift updates */
+}
+
+.column-pill-header h3 {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    font-weight: 400;
+}
+
+/* =========================================
+  7. LINKED ICONS IMAGE CALIBRATION ENGINE
+  =========================================
+*/
+.icon-link {
+    display: inline-block;
+    width: 100%;
+    max-width: 180px; /* Controls absolute limit sizing of the logo wrappers */
+    transition: transform 0.2s ease; /* Fluid transition timing link */
+}
+
+.social-icon {
+    width: 100%;
+    height: auto;
+    
+    /* PRO IMAGE ALIGNMENT FIX: 
+       Forces all three custom logos to share a matching 1:1 footprint canvas area. 
+       "contain" stops logo scaling ratios from distorting or stretching.
+    */
+    aspect-ratio: 1 / 1; 
+    object-fit: contain; 
+    
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)); /* Drop shadow tracks the exact png vector edge contours */
+}
+
+/* =========================================
+  8. INTERACTIVE HOVER ANIMATION CONTROLLERS
+  =========================================
+*/
+.column-pill-header:hover {
+    transform: translateY(-4px); /* Moves text capsule up 4px along the Y-axis */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+.icon-link:hover {
+    transform: translateY(-6px); /* Moves platform asset graphic up 6px for responsive click feel */
+}
+
+/* =========================================
+  9. UNIVERSAL SITE FOOTER BAR
+  =========================================
+*/
+.site-footer {
+    height: 90px;
+    background-color: var(--card-beige-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    color: var(--text-dark);
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+.nav-item.active {
+    text-decoration: none;
+    opacity: 0.5; /* Understates look of active page tab indicator link */
+}

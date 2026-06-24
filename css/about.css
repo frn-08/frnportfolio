@@ -1,0 +1,210 @@
+/* =========================================
+  1. global variables and colours
+  =========================================
+*/
+:root {
+    --bg-dark: #0f0e0e;
+    --card-beige-light: #cbb49a;
+    --text-dark: #2a221b;
+    --text-box-bg: rgba(235, 222, 206, 0.88); /* Semi-transparent layout transparency */
+    --border-outline: #5c4a3c; /* Accent color to draw your title borders */
+}
+
+/* GLOBAL RESET: Flattens browser default layouts to compute box-sizing perfectly */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+  2. viewport page layout
+  =========================================
+*/
+html, body {
+    height: 100%;
+    background-color: var(--card-beige-light);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stacks header, content, and footer vertically */
+    height: 100vh;          /* Locks layout height exactly to your viewport window */
+    width: 100%;
+}
+
+/* =========================================
+  3. matching site header
+  =========================================
+*/
+.site-header {
+    height: 90px;
+    background-color: var(--card-beige-light);
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.logo {
+    font-size: 3.2rem;
+    color: var(--text-dark);
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+/* =========================================
+  4. about me hero viewport
+  =========================================
+*/
+.about-hero {
+    flex: 1; /* Stretches height dynamically to occupy all remaining screen vertical canvas */
+    width: 100%;
+    
+    /* BACKGROUND ROUTING ENG: 
+       "../" jumps out of the css/ folder, then searches images/ for your target file.
+    */
+    background-image: url('images/dark-brown-with-gold-lines.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center; /* Centers layout grid horizontally */
+    align-items: center;     /* Centers layout grid vertically */
+    padding: 40px 0;
+}
+
+/* =========================================
+  5. about interior layout structure
+  =========================================
+*/
+.about-content-wrapper {
+    width: 90%;
+    max-width: 1350px; /* Wider desktop constraints allowing columns to sit comfortably side-by-side */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* THE FRAMED MAIN TITLE:
+   Creates the hollow outlined box wrapper holding your main "about me" title label.
+*/
+.page-title-banner {
+    border: 7px solid #c7a98d;
+    padding: 10px 80px;
+    margin-bottom: 50px; /* Deep spacing pushes columns downwards */
+    background-color: rgba(71, 43, 10, 0.05); /* Subtle dark beige overlay filter */
+}
+
+.main-title {
+    font-size: 3.8rem;
+    color: var(--card-beige-light);
+    font-weight: 300;
+    letter-spacing: 10px;
+}
+
+/* =========================================
+  6. THREE-COLUMN CONFIGURATION LOGIC
+  =========================================
+*/
+.info-grid {
+    display: flex;
+    flex-direction: row; /* Orders your columns horizontally across desktop viewports */
+    justify-content: space-between; /* Spreads your 3 columns perfectly across your container width */
+    align-items: flex-start; /* Matches vertical starting alignment blocks */
+    width: 100%;
+    gap: 30px; /* Injects uniform air gaps between each column panel card */
+}
+
+.grid-column {
+    flex: 1; /* Instructs all three columns to divide available horizontal space identically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* THE CAPSULE HEADER PILL:
+   Recreates your iconic rounded column labels ("who am i", "key skills", "projects")
+*/
+.column-pill-header {
+    background-color: var(--text-box-bg);
+    padding: 15px 45px;
+    border-radius: 50px; /* High radius creates perfect organic rounded capsules */
+    margin-bottom: 25px; /* Spatial gap separating capsule labels from text blocks below */
+    margin-top: 30px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 75);
+    transition: transform 0.2s ease;
+}
+
+.column-pill-header:hover {
+    transform: translateY(-4px); /* Slightly deepens and spreads out the drop shadow as the capsule lifts, making the element look like it is physically rising closer to the user.*/
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35); /* CURSOR STYLE: Changes the pointer into a clickable hand icon */
+    cursor: pointer; 
+}
+
+.column-pill-header h3 {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    font-weight: 400;
+    white-space: nowrap; /* Prevents column titles from wrapping line breaks awkwardly */
+}
+
+/* THE CONTENT TEXT BLOCKS:
+   Styles the main informational layout cards sitting beneath your capsule headers.
+*/
+.column-text-box {
+    background-color: var(--text-box-bg);
+    padding: 35px 30px;
+    border-radius: 4px;
+    width: 100%;
+    min-height: 375px; /* Locks cards to identical baseline height boundaries for clean alignment */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* BULLET LIST DESIGN */
+.column-text-box ul {
+    list-style-type: disc; /* Retains clean standard bullet list formatting from design */
+    padding-left: 20px; /* Offsets bullets so sentences align cleanly */
+}
+
+.column-text-box li {
+    font-size: 1.05rem; /* Matches readability scale rules */
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 18px; /* Breathing gap separation between list points */
+}
+
+.column-text-box li strong {
+    font-weight: 500; /* Darkens project headings slightly for visual hierarchy layout */
+}
+
+/* =========================================
+  7. FULL-WIDTH FOOTER NAVIGATION BAR
+  =========================================
+*/
+.site-footer {
+    height: 90px;
+    background-color: var(--card-beige-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    color: var(--text-dark);
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+.nav-item.active {
+    text-decoration: none;
+    opacity: 0.5; /* Fades out about me selection item text since it's the active page */
+}
